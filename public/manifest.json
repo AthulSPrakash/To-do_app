@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "Short_name": "To Do",
+  "name": "To Do: List, Task & activities",
+  "version": "1.0",
+  "description": "A to do list app for keeping track of activities.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +10,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "icon.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "start_url": ".",

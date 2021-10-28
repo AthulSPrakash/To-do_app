@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
+import NavBar from './components/navBar';
+import Todo from './components/todoList'
+import Note from './components/Note'
+import Settings from './components/settings';
+import Header from './components/header';
 
 function App() {
+
+  const name = "Settings"
+  const [nav,setNav] = useState('To Dos')
+
+  const navCheck = (navData) => {
+    setNav(navData)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header dataFromParent = {nav} />
+      <Settings name = {name} />
+      { nav === 'To Dos' ? <Todo/> : <Note/> }
+      <NavBar navSelection = {navCheck} />
     </div>
   );
+
 }
 
 export default App;
