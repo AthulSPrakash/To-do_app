@@ -1,11 +1,11 @@
-const Render = (todo) => {
+const Render = (items) => {
     let list = ''
-    for(let i=0; i<todo.length; i++){
+    for(let i=0; i<items.length; i++){
         list += `
         <li>
-            ${todo[i]}
+            ${items[i]}
             <span class="checkbox">
-                <input type="checkbox" value=${todo[i]} id="select-delete">
+                <input type="checkbox" value=${items[i]} id="select-delete">
                 <span class="checkmark"></span>
             </span>
         </li>` 
