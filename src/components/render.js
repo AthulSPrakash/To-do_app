@@ -3,7 +3,7 @@ const Render = (items) => {
     for(let i=0; i<items.length; i++){
         list += `
         <li>
-            ${items[i]}
+            <span class="rendered-list">${items[i]}</span>
             <span class="checkbox">
                 <input type="checkbox" value=${items[i]} id="select-delete">
                 <span class="checkmark"></span>
