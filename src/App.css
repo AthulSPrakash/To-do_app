@@ -1,9 +1,13 @@
 /*----------GLOBAL-----------*/
 :root{
-    --bg: #ffff;
+    --bg: rgb(250, 250, 250);
     --bg-alt: linear-gradient(to right, rgb(102, 56, 187), rgb(207, 71, 200));
-    --menu: rgb(32, 32, 32);
+    --text-prim: rgb(32, 32, 32);
     --overley: rgba(0,0,0,0.2);
+    --note1: #fff740;
+    --note2: #feff9c;
+    --note3: #7afcff;
+    --note4: #ff7eb9;
     --text: grey;
     --text-alt: rgb(207, 71, 200);
     --text-ter: rgb(102, 56, 187);
@@ -77,14 +81,14 @@ h3{
     align-items: center;
     justify-content: space-between;
 }
-
-/*-------------TO DO------------------*/
-.header-todo-container{
+.section-header-container{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 15px;
 }
+
+/*-------------TO DO------------------*/
 .select-container{
     display: flex;
     justify-content: space-between;
@@ -126,7 +130,7 @@ h3{
     cursor: pointer;
 }
 .list-container{
-    background: var(--secondary);
+    background: var(--bg);
     flex-grow: 1;
     padding: 15px;
     overflow-x: hidden;
@@ -148,13 +152,13 @@ li{
     position: relative;
     list-style: none;
     padding: 10px;
-    background: var(--bg);
     display: flex;
     align-items: center;
     margin: 0 0 7px 0;
     border-radius: 3px;
-    color: var(--menu);
+    color: var( --text-prim);
     cursor: pointer;
+    background: var( --primary);
 }
 .rendered-list{
     overflow: hidden;
@@ -179,11 +183,12 @@ li{
     height: 24px;
     width: 24px;
     border-radius: 24px;
-    outline: 2px solid var(--primary);
+    outline: 2px solid var(--bg);
     cursor: pointer;
+    background: var(--primary);
 }
 .checkbox input:checked ~ .checkmark {
-    background: var(--secondary);
+    background: var(--text);
 }
 button{
     background: none;
@@ -315,4 +320,49 @@ input{
     justify-content: center;
     align-items: center;
     background: var(--bg);
+}
+.note-list{
+    display: flex;
+    flex-direction: unset;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.note-list li{
+    border-radius: 7px;
+    width: 48%;
+    align-items: unset;
+    outline: none;
+    color: var(--text-prim);
+}
+.note-list li:nth-child(n+0) {
+    background: var(--note2);
+}
+.note-list li:nth-child(2n+0) {
+    background: var(--note4);
+}
+.note-list li:nth-child(3n+0) {
+    background: var(--note3);
+}
+.note-list li:nth-child(4n+0) {
+    background: var(--note1);
+}
+.note-list .checkbox {
+    height: auto;
+    bottom: 10px;
+}
+.note-list .checkmark{
+    border-radius: 0;
+    width: 0;
+    height: 0;
+    background: none;
+    outline: none;
+    border: none;
+    border: 50px 0 50px 0;
+    border-right: 24px solid var(--bg);
+    border-top: 24px solid transparent;
+}
+.note-list input:checked ~ .checkmark {
+    background: none;
+    border-right: 24px solid var(--text);
 }

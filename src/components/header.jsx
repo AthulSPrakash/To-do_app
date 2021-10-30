@@ -1,4 +1,4 @@
-const Header = ({dataFromParent}) => {
+const Header = ({title}) => {
 
     const settings = () => {
         document.querySelector('.settings-container').classList.toggle('show')
@@ -10,7 +10,7 @@ const Header = ({dataFromParent}) => {
             <button onClick={()=>settings()}  className="settings" title="settings">
               <i className="fas fa-bars"></i>
             </button>
-            <h2 aria-label="App Name">{dataFromParent}</h2>
+            <h2 aria-label="App Name">{title}</h2>
         </div>
       </div>
     )

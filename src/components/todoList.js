@@ -112,7 +112,7 @@ const Todo = () => {
 
     return(
         <>
-            <div className="header-todo-container">
+            <div className="section-header-container">
                 {/* delete selection  */}
                 <div className="select-container">
                     <button onClick={()=>selectAll()} className="select-all" title="select all">

@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header dataFromParent = {nav} />
+      <Header title = {nav} />
       <Settings name = {name} />
       { nav === 'To Dos' ? <Todo/> : <Note/> }
       <NavBar navSelection = {navCheck} />
