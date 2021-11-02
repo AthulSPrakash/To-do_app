@@ -16,7 +16,7 @@ const Todo = () => {
         const list = document.querySelector('#list')
         const toDo = document.querySelector('#to-do')
         if(toDo.value===''){
-        return
+            return
         }
         todolist.push(toDo.value)
         toDo.value = ''
@@ -38,16 +38,17 @@ const Todo = () => {
 
     const createDeleteArray = () => {
         const allCheckBox = document.querySelectorAll('#select-delete')
-        for(let i=0; i<allCheckBox.length; i++){
+        const allSpan = document.querySelectorAll('.rendered-list')
+        for(let i=0; i<allSpan.length; i++){
             allCheckBox[i].addEventListener('click',()=>{
-                if(delelist.includes(allCheckBox[i].value)){
+                if(delelist.includes(allSpan[i].textContent)){
                     return
                 }
-                delelist.push(allCheckBox[i].value)
+                delelist.push(allSpan[i].textContent)
             })
             if(allCheckBox[i].checked === true){
-                if(!delelist.includes(allCheckBox[i].value)){
-                    delelist.push(allCheckBox[i].value)
+                if(!delelist.includes(allSpan[i].textContent)){
+                    delelist.push(allSpan[i].textContent)
                 }
             }
         }
@@ -96,8 +97,7 @@ const Todo = () => {
 
     const deleteList = () => {
         todolist = todolist.filter( item => {
-            if(!delelist.includes(item))
-            return item
+            return !delelist.includes(item)
         })
         localStorage.setItem("to-do", JSON.stringify(todolist))
         const list = document.querySelector('#list')

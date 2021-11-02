@@ -25,7 +25,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
     scroll-behavior: smooth;
 }
 h2{
@@ -36,7 +35,7 @@ h3{
 }
 .container{
     position: relative;
-    width: 350px;
+    width: 100vw;
     height: 100vh;
     background: var(--bg);
     display: flex;
@@ -60,6 +59,7 @@ h3{
 .settings-container{
     position: absolute;
     width: 100%;
+    max-width: 450px;
     height: 100%;
     z-index: 4;
     transform: translateX(-100%);
@@ -71,6 +71,12 @@ h3{
     height: 100%;
     padding: 15px 25px;
     background: var(--bg-alt);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7%;
+    letter-spacing: 0.05em;
+    color: var(--bg);
 }
 .menu-close{
     flex-grow: 1;
@@ -86,6 +92,12 @@ h3{
     justify-content: flex-end;
     align-items: center;
     padding: 15px;
+}
+.dark-mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 /*-------------TO DO------------------*/
@@ -110,14 +122,15 @@ h3{
 .fas, .far{
     font-size: 24px;
 }
-.fa-bars{
-
+.fa-times, .fa-toggle-off, .fa-toggle-on{
+    color: var(--bg);
+    font-size: 28px;
 }
-.fa-trash-alt{
-
+.fa-toggle-on{
+    visibility: hidden;
 }
-.fa-check-double{
-
+.fa-toggle-off{
+    position: absolute;
 }
 .fa-plus{
     color: var(--bg);
@@ -146,7 +159,8 @@ h3{
 ul{
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
+    gap: 7px;
 }
 li{
     position: relative;
@@ -155,7 +169,7 @@ li{
     display: flex;
     align-items: center;
     margin: 0 0 7px 0;
-    border-radius: 3px;
+    border-radius: 7px;
     color: var( --text-prim);
     cursor: pointer;
     background: var( --primary);
@@ -285,6 +299,15 @@ input{
     transform: translateY(0%) translateX(0%);
     transition: 0.35s;
 }
+@media screen and (min-width:850px) {
+    ul{
+        flex-direction: unset;
+        flex-wrap: wrap;
+    }
+    li{
+        width: 49.25%;
+    }
+}
 
 /*-------------NAVBAR-----------*/
 .main-nav{
@@ -322,10 +345,12 @@ input{
     background: var(--bg);
 }
 .note-list{
+    display: -ms-flexbox;
     display: flex;
     flex-direction: unset;
     justify-content: space-between;
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     gap: 7px;
 }
 .note-list li{
@@ -365,4 +390,36 @@ input{
 .note-list input:checked ~ .checkmark {
     background: none;
     border-right: 24px solid var(--text);
+}
+@media screen and (min-width:600px) {
+    .note-list li{
+        width: 32%;
+        padding: 15px;
+    }
+    .add{
+        right: 30px;
+    }
+    .menu-container h3{
+        font-size: 18px;
+    }
+    .fa-times, .fa-toggle-off, .fa-toggle-on{
+        color: var(--bg);
+        font-size: 32px;
+    }
+}
+@media screen and (min-width:1100px) {
+    .note-list li{
+        width: 24%;
+        padding: 18px;
+    }
+    .add{
+        right: 40px;
+    }
+    .menu-container h3{
+        font-size: 22px;
+    }
+    .fa-times, .fa-toggle-off, .fa-toggle-on{
+        color: var(--bg);
+        font-size: 36px;
+    }
 }

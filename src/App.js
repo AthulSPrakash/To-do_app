@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css';
 import NavBar from './components/navBar';
 import Todo from './components/todoList'
-import Note from './components/Note'
+import Note from './components/note'
 import Settings from './components/settings';
 import Header from './components/header';
 

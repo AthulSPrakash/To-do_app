@@ -38,16 +38,17 @@ const Note = () => {
 
     const createDeleteArray = () => {
         const allCheckBox = document.querySelectorAll('#select-delete')
-        for(let i=0; i<allCheckBox.length; i++){
+        const allSpan = document.querySelectorAll('.rendered-list')
+        for(let i=0; i<allSpan.length; i++){
             allCheckBox[i].addEventListener('click',()=>{
-                if(delelist.includes(allCheckBox[i].value)){
+                if(delelist.includes(allSpan[i].textContent)){
                     return
                 }
-                delelist.push(allCheckBox[i].value)
+                delelist.push(allSpan[i].textContent)
             })
             if(allCheckBox[i].checked === true){
-                if(!delelist.includes(allCheckBox[i].value)){
-                    delelist.push(allCheckBox[i].value)
+                if(!delelist.includes(allSpan[i].textContent)){
+                    delelist.push(allSpan[i].textContent)
                 }
             }
         }
