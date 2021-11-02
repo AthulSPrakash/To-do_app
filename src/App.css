@@ -377,6 +377,10 @@ input{
     outline: none;
     color: var(--text-prim);
 }
+.note-list li .checkbox .checkmark:after {
+    left: 10.5px;
+    top: -17px;
+}
 .note-list li:nth-child(n+0) {
     background: var(--note2);
 }
