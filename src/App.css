@@ -140,10 +140,6 @@ h3{
 .fa-plus{
     color: var(--bg);
 }
-.fa-exclamation{
-    color: red;
-    cursor: pointer;
-}
 .list-container{
     background: var(--bg);
     flex-grow: 1;
@@ -204,7 +200,26 @@ li{
     background: var(--primary);
 }
 .checkbox input:checked ~ .checkmark {
-    background: var(--text);
+    background: crimson;
+}
+.checkmark:after {
+    content: "";
+    display: none;
+}
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkbox .checkmark:after {
+    position: relative;
+    left: 6.5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 5px 5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 button{
     background: none;
@@ -391,7 +406,7 @@ input{
 }
 .note-list input:checked ~ .checkmark {
     background: none;
-    border-right: 24px solid var(--text);
+    border-right: 24px solid crimson;
 }
 @media screen and (min-width:600px) {
     .note-list li{
