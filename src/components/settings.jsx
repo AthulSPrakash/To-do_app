@@ -1,21 +1,34 @@
 const Settings = ({name}) => {
 
+    const root = document.querySelector(':root')
+    const darkmode = localStorage.getItem("darkmode")
+
     const settings = () => {
         document.querySelector('.settings-container').classList.toggle('show')
     }
 
+    document.addEventListener('DOMContentLoaded',() => {
+        const btn = document.querySelector('.fa-toggle-on')
+        if(darkmode==="true"){
+            btn.classList.add('visible')
+            root.style.setProperty('--bg', '#282A35')
+            root.style.setProperty('--text', 'rgb(250, 250, 250)')
+        }
+    })
+
     const toggleDark = () => {
-        const root = document.querySelector(':root')
         const btn = document.querySelector('.fa-toggle-on')
 
         if(btn.classList.contains('visible')){
             btn.classList.remove('visible')
             root.style.setProperty('--bg', 'rgb(250, 250, 250)')
             root.style.setProperty('--text', 'grey')
+            localStorage.setItem("darkmode", "false")
         }else{
             btn.classList.add('visible')
             root.style.setProperty('--bg', '#282A35')
             root.style.setProperty('--text', 'rgb(250, 250, 250)')
+            localStorage.setItem("darkmode", "true")
         }
     }
 

@@ -145,9 +145,7 @@ const Note = () => {
                 <form>
                     <input type="text" id="note" name="list" placeholder="Note" autoComplete="off"/>
                     <div className="btn-container">
-                        <span title="mark as important">
-                            <i className="fas fa-exclamation"></i>
-                        </span>
+                        <span></span>
                         <span>
                             <span onClick={()=>showInput()} className="input-close" title="close">Close</span>
                             <input onClick={(e)=>saveList(e)} type="submit" id="save" title="save text" value="Save"/>

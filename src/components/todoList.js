@@ -146,8 +146,7 @@ const Todo = () => {
                 <form>
                     <input type="text" id="to-do" name="list" placeholder="To-do" autoComplete="off"/>
                     <div className="btn-container">
-                        <span title="mark as important">
-                            <i className="fas fa-exclamation"></i>
+                        <span>
                         </span>
                         <span>
                             <span onClick={()=>showInput()} className="input-close" title="close">Close</span>
