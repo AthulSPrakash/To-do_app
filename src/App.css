@@ -48,7 +48,7 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 25px 20px 20px;
 }
 .name_container{
     display: flex;
@@ -92,7 +92,7 @@ h3{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 15px;
+    padding: 25px 20px 20px;
 }
 .dark-mode{
     display: flex;
@@ -147,7 +147,7 @@ h3{
 .list-container{
     background: var(--bg);
     flex-grow: 1;
-    padding: 15px;
+    padding: 15px 20px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -218,7 +218,7 @@ button{
     height: 65px;
     border-radius: 55px;
     background: var(--bg-alt);
-    bottom: 70px;
+    bottom: 80px;
     right: 20px;
     transition: 0.35s;
 }
@@ -314,7 +314,7 @@ input{
 /*-------------NAVBAR-----------*/
 .main-nav{
     width: 100%;
-    padding: 18px 15px;
+    padding: 20px 15px 25px;
     background: var(--bg);
     display: flex;
     justify-content: space-evenly;
