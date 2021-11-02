@@ -29,9 +29,11 @@ body{
 }
 h2{
     color: var(--text);
+    user-select: none;
 }
 h3{
     color: var(--bg);
+    user-select: none;
 }
 .container{
     position: relative;
@@ -54,7 +56,9 @@ h3{
     display: flex;
     gap: 7px;
 }
-
+.rendered-list{
+    user-select: none;
+}
 /*-------------SETTINGS------------*/
 .settings-container{
     position: absolute;
@@ -169,7 +173,6 @@ li{
     margin: 0 0 7px 0;
     border-radius: 7px;
     color: var( --text-prim);
-    cursor: pointer;
     background: var( --primary);
 }
 .checkbox{

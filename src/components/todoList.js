@@ -120,7 +120,7 @@ const Todo = () => {
                     </button>
                     <div className="delete-btn-container">
                         <button onClick={()=>clearSelection()} className="clear-all" title="clear selection">
-                                <i className="fas fa-times"></i>
+                            <i className="fas fa-times"></i>
                         </button>
                         <button onClick={()=>deleteOption()} title="delete item" className="delete-btn">
                             <i className="far fa-trash-alt"></i>
