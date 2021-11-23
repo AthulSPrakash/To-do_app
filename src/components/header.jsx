@@ -1,7 +1,7 @@
 const Header = ({title}) => {
 
     const settings = () => {
-        document.querySelector('.settings-container').classList.toggle('show')
+        document.querySelector('.settings-container').classList.toggle('open')
     }
 
     return(

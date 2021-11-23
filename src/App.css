@@ -9,6 +9,7 @@
     --note3: #7afcff;
     --note4: #ff7eb9;
     --text: grey;
+    --shadow: rgb(32, 32, 32);
     --text-alt: rgb(207, 71, 200);
     --text-ter: rgb(102, 56, 187);
     --primary: lightgrey;
@@ -57,7 +58,10 @@ h3{
     gap: 7px;
 }
 .rendered-list{
-    user-select: none;
+    overflow: auto;
+}
+.rendered-list::-webkit-scrollbar{
+    display: none;
 }
 /*-------------SETTINGS------------*/
 .settings-container{
@@ -108,6 +112,25 @@ h3{
     font-size: 28px;
     color: var(--text);
 }
+.outer-switch{
+    background: var(--bg);
+    width: 3.5em;
+    height: 2em;
+    border-radius: 2em;
+    
+    padding: 0.25em;
+}
+.inner-switch{
+    background: var(--text-alt);
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1.5em;
+    transition: 0.25s;
+}
+.switch{
+    transition: 0.25s;
+    transform: translateX(1.5em);
+}
 
 /*-------------TO DO------------------*/
 .select-container{
@@ -131,15 +154,9 @@ h3{
 .fas, .far{
     font-size: 24px;
 }
-.menu-container .fa-times, .fa-toggle-off, .fa-toggle-on{
+.menu-container .fa-times{
     color: var(--bg);
     font-size: 28px;
-}
-.fa-toggle-on{
-    visibility: hidden;
-}
-.fa-toggle-off{
-    position: absolute;
 }
 .fa-plus{
     color: var(--bg);
@@ -215,7 +232,7 @@ li{
     top: 3px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid var(--bg);
     border-width: 0 5px 5px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -312,7 +329,12 @@ input{
     transition: 0.35s;
     transform: translateY(100%);
 }
+.open{
+    transform: translateY(0%) translateX(0%);
+    transition: 0.35s;
+}
 .show{
+    box-shadow: 0 0 1em var(--shadow);
     transform: translateY(0%) translateX(0%);
     transition: 0.35s;
 }
@@ -377,10 +399,6 @@ input{
     outline: none;
     color: var(--text-prim);
 }
-.note-list li .checkbox .checkmark:after {
-    left: 10.5px;
-    top: -17px;
-}
 .note-list li:nth-child(n+0) {
     background: var(--note2);
 }
@@ -396,21 +414,6 @@ input{
 .note-list .checkbox {
     height: auto;
     bottom: 10px;
-}
-.note-list .checkmark{
-    border-radius: 0;
-    width: 0;
-    height: 0;
-    background: none;
-    outline: none;
-    border: none;
-    border: 50px 0 50px 0;
-    border-right: 24px solid var(--bg);
-    border-top: 24px solid transparent;
-}
-.note-list input:checked ~ .checkmark {
-    background: none;
-    border-right: 24px solid crimson;
 }
 @media screen and (min-width:600px) {
     .note-list li{
