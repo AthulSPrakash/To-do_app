@@ -23,10 +23,11 @@ const Settings = ({name}) => {
 
     React.useEffect(() => {
         darkMode? darkModeToggle() : darkModeToggleOff()
-    })
+        const btn = document.querySelector('.inner-switch')
+        darkMode ? btn.classList.add('switch') : btn.classList.remove('switch')
+    },[darkMode])
 
     const toggleDark = () => {
-        document.querySelector('.inner-switch').classList.toggle('switch')
         setDarkMode(prevMode => !prevMode)
     }
 
